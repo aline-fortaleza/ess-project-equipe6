@@ -17,7 +17,7 @@ Scenario: Falha em começar a reserva por
 	When eu preencho “Check In” com “07/01/2025”
 	And eu preencho “Checkout” com “17/01/2025”
 	And eu seleciono “Reservar”
-	Then uma mensagem de erro é exibida “Selecione todos os campos para continuar com a reserva”
+	Then uma mensagem de erro pedindo para completar todos os campos é exibida
 
 
 Scenario: Editar detalhes da Reserva
@@ -25,25 +25,21 @@ Scenario: Editar detalhes da Reserva
 	When eu seleciono “editar datas”
 	And eu preencho “Datas” com “10/01/2025 - 17/01/2025”
 	And eu seleciono “Modificar”
-	Then uma mensagem de confirmação é exibida “Você alterou sua Reserva”
-And  eu continuo na página de “Detalhes da Reserva”
+	Then uma mensagem de confirmação da alteração é exibida 
+    And  eu continuo na página de “Detalhes da Reserva”
 
 Scenario: Erro ao seguir para Confirmação
 	Given eu estou na página “Detalhes da Reserva”
 	And eu não estou logado
 	When eu seleciono “Seguir”
-	Then uma mensagem de erro é exibida “Você precisa logar para continuar”
-And  eu continuo na página de “Detalhes da Reserva”
+	Then uma mensagem de erro solicitando o login é exibida
+    And  eu continuo na página de “Detalhes da Reserva”
 
 Scenario: Logar para seguir para Confirmação
 	Given eu estou na página “Detalhes da Reserva”
 	And eu não estou logado
 	When eu seleciono “Logar”
 	Then eu mudo para a página “Login”
-
-
-
-
 
 Scenario: Seguir para Confirmação
 	Given eu estou na página “Detalhes da Reserva”
@@ -54,8 +50,7 @@ Scenario: Seguir para Confirmação
 Scenario: Confirmar Reserva
 	Given eu estou na página “Confirmar Reserva”
 	When eu seleciono “Confirmar”
-	Then uma mensagem de sucesso é exibida “Reserva enviada para aprovação com proprietário”
-
+	Then uma mensagem de sucesso da solicitação é exibida 
 
 Scenario: Não confirmar Reserva
 	Given eu estou na página “Confirmar Reserva”
