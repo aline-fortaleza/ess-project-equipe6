@@ -1,3 +1,4 @@
+import PFEntity from '../entities/pf.entity';
 import TestEntity from '../entities/test.entity';
 
 export default class Database {
@@ -25,6 +26,17 @@ export default class Database {
         new TestEntity({
           id: '89ecc32a-aec7-4b71-adfd-03287e4ca74f',
           name: 'Test Seed',
+        }),
+      ],
+      pfs: [
+        new PFEntity({
+          id: '12732',
+          user_id: '1',
+          name: 'bia',
+          birth_date: new Date(2000, 0, 9),
+          cpf: '28173891',
+          phone: '98171-2882',
+          favorites: ['12', '22', '32'],
         }),
       ],
     };
