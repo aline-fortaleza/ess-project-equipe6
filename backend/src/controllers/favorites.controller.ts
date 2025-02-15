@@ -1,7 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { Result, SuccessResult } from '../utils/result';
 import FavoriteService from '../services/favorite.service';
-import FavoriteEntity from '../entities/favorite.entity';
 
 class FavoritesController {
   private prefix: string = '/favorites';

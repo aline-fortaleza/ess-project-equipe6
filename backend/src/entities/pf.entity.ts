@@ -7,6 +7,7 @@ export default class PFEntity extends BaseEntity {
   cpf: string;
   phone: string;
   favorites: string[];
+  savedRooms: string[];
 
   constructor(data: PFEntity) {
     super(data.id || '');
@@ -16,5 +17,6 @@ export default class PFEntity extends BaseEntity {
     this.cpf = data.cpf;
     this.phone = data.phone;
     this.favorites = data.favorites;
+    this.savedRooms = data.savedRooms;
   }
 }

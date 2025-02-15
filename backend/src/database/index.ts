@@ -37,6 +37,7 @@ export default class Database {
           cpf: '28173891',
           phone: '98171-2882',
           favorites: ['12', '22', '32'],
+          savedRooms:  ['12', '222', '32'],
         }),
       ],
     };
